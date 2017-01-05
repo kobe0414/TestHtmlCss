@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				position: absolute;
+			}
+		</style>
+		<script>
+		    var oDiv = null;
+		    var divX = 0;
+		    var divY = 0;
+			window.onload = function() {
+				oDiv = document.getElementById('div1');
+				oDiv.onmousedown = fnDown;
+			}
+
+			function fnDown(ev) {
+				var oEvent = ev || event;
+//				alert(oDiv.offsetLeft);
+				divX = oEvent.clientX - oDiv.offsetLeft;
+				divY = oEvent.clientY - oDiv.offsetTop;
+				document.onmousemove = fnMove;
+
+				document.onmouseup = fnUp;
+			}
+
+			function fnMove(ev) {
+				var oEvent = ev || event;
+				oDiv.style.left = oEvent.clientX - divX + 'px';
+				oDiv.style.top = oEvent.clientY - divY + 'px';
+			}
+
+			function fnUp() {
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="div1"></div>
+	</body>
+
+</html>

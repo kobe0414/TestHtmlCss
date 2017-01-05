@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.select.js"></script>
+	</head>
+	<script>
+		$(document).ready(function (){
+			$('#txt1').multipleSelect();
+			$('#btn1').click(function(){
+				var dataOption = {
+					1:'张三',
+					2:'李四'
+				}
+				$('#txt1').multipleSelectSetData(dataOption);
+			});
+			
+			$('#btn2').click(function (){
+				alert($('#txt1').val());
+			});
+			
+			$('#txt2').multipleSelect();
+		});
+	</script>
+	<style>
+		#txt1 {
+			
+		}
+	</style>
+	<body>
+		<div style="margin: 20px auto; width: 200px; height: 200px; background: red;">
+			<input id="txt1" type="text" />
+			<input type="button" id="btn1" value="setData"/>
+			<input type="button" id="btn2" value="getData" />
+			<input type="button" id="btn3" value="isFullChoose" />
+		</div>
+		<div>
+			<ul>
+				<li><input type="checkbox" /><label>中国</label></li>
+				<li><input type="checkbox" /><label>美国</label></li>
+				<li><input type="checkbox" /><label>俄罗斯</label></li>
+				<li><input type="checkbox" /><label>韩国</label></li>
+				<li><input type="checkbox" /><label>土耳其</label></li>
+			<input type="text" id="txt2" />
+		</div>
+	</body>
+</html>

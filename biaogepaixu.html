@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function (){
+				var oTab = document.getElementById('tab1');
+				var oBtn = document.getElementById('btn1');
+				oBtn.onclick = function (){
+					var arr = [];
+					
+					for(var i = 0 ; i < oTab.tBodies[0].rows.length ; i ++){
+						arr[i] = oTab.tBodies[0].rows[i];
+					}
+					arr.sort(function (tr1,tr2){
+						var n1 = parseInt(tr1.cells[0].innerHTML);
+						var n2 = parseInt(tr2.cells[0].innerHTML);
+						return n1 - n2;
+					});
+					
+					for(var i = 0 ; i < arr.length ; i++){
+						oTab.tBodies[0].appendChild(arr[i]);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="排序" />
+		<table id="tab1" border="1" width="500">
+			<thead>
+				<td>id</td>
+				<td>姓名</td>
+				<td>年龄</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>22</td>
+				    <td>张三</td>
+				    <td>24</td>
+				</tr>
+				<tr>
+					<td>33</td>
+				    <td>李四</td>
+				    <td>23</td>
+				</tr>
+				<tr>
+					<td>5</td>
+				    <td>王五</td>
+				    <td>32</td>
+				</tr>
+				<tr>
+					<td>78</td>
+				    <td>赵六</td>
+				    <td>55</td>
+				</tr>
+				<tr>
+					<td>8</td>
+				    <td>Bule</td>
+				    <td>66</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

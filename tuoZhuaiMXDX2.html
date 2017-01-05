@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/Drag.js" ></script>
+		<script type="text/javascript" src="js/LimitDrag.js"></script>
+		<style>
+			#div1 {
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				position: absolute;
+			}
+			#div2 {
+				width: 200px;
+				height: 200px;
+				background: green;
+				position: absolute;
+			}
+		</style>
+		<script>
+		    window.onload = function (){
+		    	new Drag('div1');
+		    	new LimitDrag('div2');
+		    }
+		    
+		    
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="div1">原来的</div>
+		<div id="div2">继承的</div>
+	</body>
+
+</html>

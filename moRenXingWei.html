@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			document.oncontextmenu = function (){
+				return false;
+			}
+			window.onload = function (){
+				var oTxt = document.getElementById('txt1');
+				oTxt.onkeydown = function (ev){
+					var oEvent = ev || event;
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt1" />
+	</body>
+</html>

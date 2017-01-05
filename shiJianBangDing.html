@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var oBtn = document.getElementById('btn1');
+
+				//两次绑定不会相互覆盖  IE7及以下  attachEvent('事件名',函数)
+				//				oBtn.attachEvent('onclick',function (){
+				//					alert('a');
+				//				});
+				//				oBtn.attachEvent('onclick',function (){
+				//					alert('b');
+				//				});
+				//              IE9 及以上  火狐 谷歌 
+				/*oBtn.addEventListener('click',function (){
+					alert('a');
+				},false);
+				oBtn.addEventListener('click',function (){
+					alert('b');
+				},false);*/
+				if(oBtn.attachEvent) {
+					oBtn.attachEvent('onclick', function() {
+						alert('a');
+					});
+				} else {
+					oBtn.addEventListener('click', function() {
+						alert('a');
+					}, false);
+					oBtn.addEventListener('click', function() {
+						alert('b');
+					}, false);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" id="btn1" value="anniu" />
+	</body>
+
+</html>
