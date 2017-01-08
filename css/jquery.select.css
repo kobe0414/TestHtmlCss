@@ -1,3 +1,10 @@
-.pos {
-	position: absolute;
+.selectDiv{
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.searchInput {
+	margin-left: 5px;
+	margin-top: 5px;
+	display: block;
 }

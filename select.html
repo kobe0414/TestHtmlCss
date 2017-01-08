@@ -3,17 +3,31 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" href="css/jquery.select.css" />
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.select.js"></script>
 	</head>
 	<style>
 		.mt {
 			overflow: auto;
+			overflow-x: hidden;
+			background: white;
+			border: 1px;
+			border-color: black;
 		}
 	</style>
 	<script>
 		$(document).ready(function (){
-			$('#txt1').multipleSelect();
+			$('#txt1').multipleSelect({
+				filter: true,
+				data:{
+					zg: '中国',
+			        mg: '美国',
+			        yg: '英国',
+			        hg: '韩国',
+			        rb: '日本'
+				}
+			});
 			$('#btn1').click(function(){
 				var dataOption = {
 					1:'张三',
@@ -23,7 +37,7 @@
 			});
 			
 			$('#btn2').click(function (){
-				alert($('#txt1').val());
+				alert($('#txt1').attr('key'));
 			});
 			
 			$('#txt2').multipleSelect();
@@ -31,7 +45,7 @@
 	</script>
 	
 	<body>
-		<div style="margin: 20px auto; width: 200px; height: 200px; background: red;">
+		<div style="margin: 20px auto; width: 200px; height: 200px;">
 			<input id="txt1" type="text" />
 			<input type="button" id="btn1" value="setData"/>
 			<input type="button" id="btn2" value="getData" />

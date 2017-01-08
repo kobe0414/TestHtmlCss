@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.select.js"></script>
 		<!--<script type="text/javascript" src="js/test.js" ></script>-->
 		<style>
 			#div1 {
@@ -21,6 +22,7 @@
 		
 		<p>你好<sub>上标</sub></p>
 		<div id="div1"></div>
+		<input id="txt1" />
 	</body>
 	<script>
 		window.onload = function(){
@@ -28,6 +30,16 @@
 
             var arr = [1,2,3,4];
             $(arr).get(0);
+            $('#txt1').multipleSelect({
+				filter: true,
+				data:{
+					zg: '中国',
+			        mg: '美国',
+			        yg: '英国',
+			        hg: '韩国',
+			        rb: '日本'
+				}
+			});
 		}
 			
 	</script>
