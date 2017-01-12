@@ -59,11 +59,16 @@
 		var left = $that.offset().left;
 		var width = $that.width();
 		var height = $that.height();
+		//input id
 		var inputSelectId = $that.attr('id');
+		//复选框div ID
 		var divId = inputSelectId + only + 'Div';
+		//checkboks 所在 ui 的id
 		var ulId = inputSelectId + only + 'ul';
 		var $ul;
+		//全选复选框 id
 		var selectAllId = inputSelectId + only + 'selectAll';
+		//搜索框id
 		var selectSearchInputId = inputSelectId + only + 'Search';
 		var $selectAllInput;
 		var $selectInput;
@@ -94,6 +99,8 @@
 		$selectDiv.css('height', opts.height);
 		$selectDiv.css('background', 'white');
 		$selectDiv.css('border','1px solid #5B5B5B');
+		
+		
 		
 		$selectDiv.hide();
 
@@ -135,7 +142,7 @@
 
 		$selectDiv.append('<input id="' + selectSearchInputId + '" class="searchInput" type="text" />');
 		$selectSearch = $('#' + selectSearchInputId);
-		$selectSearch.css('width', opts.width - 5);
+		$selectSearch.css('width', opts.width - 15 + 'px');
 		if(opts.filter) {
 			$selectSearch.keyup(function(event) {
 				keyupSelectSearch($selectInput,$(this));
@@ -145,7 +152,7 @@
 			$selectSearch.hide();
 		}
 
-		$selectDiv.append('<input style="margin-left: 12px;margin-top:5px;" id="' + selectAllId + '" type="checkbox" />全选');
+		$selectDiv.append('<label style="margin-left: 8px;margin-top:5px;"><input id="' + selectAllId + '" type="checkbox" />全选</label>');
 		$selectAllInput = $('#' + selectAllId);
 		$that.attr('isFullChoose',false);
 		if(opts.selectAll) {
